@@ -1,0 +1,91 @@
+.Progress{
+  background-color: var(--secondary-light-color);
+  min-height:var(--breadcrumbs-height);
+  
+  padding: 20px 0;
+  
+  display:flex;
+  justify-content:space-around;
+  align-items:flex-start;
+
+  &-Step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-Line{
+    background:var(--secondary-base-color);
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    margin-top: 17px;
+
+    overflow: hidden;
+  }
+}
+
+.Step{
+  &-Cirlce{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 10px;
+    
+    background:var(--secondary-base-color);
+    color: $default-secondary-dark-color;
+
+    font-size: larger;
+    font-weight: bold;
+
+    svg{
+      width: 25px;
+    }
+
+    &_isFilled{
+      animation: animate-circle 0.5s linear forwards;
+      color: $white;
+    }
+  }
+
+  &-Title{
+    margin: 5px 0;
+    color: $default-secondary-dark-color;
+    font-weight: bold;
+
+    &_isFilled{
+      color: $black;
+    }
+  }
+}
+
+
+.Line{
+  &-Fill{
+    height: 100%;
+    background:var(--primary-base-color);
+    
+    transform: scaleX(0);
+    transform-origin: left; 
+    animation: animate-fill 0.5s linear forwards;
+  }
+}
+
+@keyframes animate-fill {
+  100%{
+    transform: scaleX(1)
+  }
+}
+
+
+@keyframes animate-circle {
+  100%{
+    background: var(--primary-base-color);
+  }
+} 
