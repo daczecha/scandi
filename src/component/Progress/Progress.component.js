@@ -3,12 +3,6 @@ import { PureComponent } from 'react';
 import './Progress.style.scss';
 
 class Progress extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state;
-  }
-
   renderProgress = () => {
     const { stepMap, checkoutStep } = this.props;
 
